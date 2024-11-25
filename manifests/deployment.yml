@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: youssefbenmiledtetrisgameapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: youssefbenmiledtetrisgameapp
+  template:
+    metadata:
+      labels:
+        app: youssefbenmiledtetrisgameapp 
+    spec:
+      containers:
+        - name: youssefbenmiledtetrisgameapp 
+          image: labacr24.azurecr.io/youssefbenmiledtetrisgameapp
+          ports:
+          - containerPort: 80
