@@ -38,3 +38,10 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Azure subscription 1(1)(0c65ba3a-6af8-426c-9a7b-b16085315ffc)'
+        appType: 'webAppLinux'
+        WebAppName: 'tetriswebapp'
+        packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
